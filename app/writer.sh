@@ -8,7 +8,10 @@ else
   exit 1
 fi
 }
-
+if [ $# -lt 1 ] ; then 
+  echo "no Arguments supplied"
+  exit 1
+fi
 echo "upstream backend  {" > /etc/nginx/conf.d/default.conf
 for var in "$@"
 do
